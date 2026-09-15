@@ -12,7 +12,7 @@
 #include "IO.h"
 #include "timer.h"
 #include "PWM.h"
-
+#include "ADC.h"
 
 int main(void) {
     //***********************************************************************************************
@@ -28,7 +28,7 @@ int main(void) {
     LED_ORANGE_1 = 1;
     LED_ROUGE_1 = 1;
     LED_VERTE_1 = 1;
-    
+
     LED_BLANCHE_2 = 1;
     LED_BLEUE_2 = 1;
     LED_ORANGE_2 = 1;
@@ -40,12 +40,18 @@ int main(void) {
     //apppel des fonctions PWM
     //**********************************************************************************************
     InitPWM();
-    PWMSetSpeed(0,MOTEUR_DROIT);
-    PWMSetSpeed(0,MOTEUR_GAUCHE);
+
+    /* PWMSetSpeed(0,MOTEUR_DROIT);
+     PWMSetSpeed(0,MOTEUR_GAUCHE);*/
+    /*PWMSetSpeedConsigne(0,MOTEUR_DROIT);
+    PWMSetSpeedConsigne(0,MOTEUR_GAUCHE);
+    PWMUpdateSpeed();*/
+    InitADC1();
+    ADCGetResult();
     //**********************************************************************************************
     // Boucle Principale
     //**********************************************************************************************
-  while (1) {
+    while (1) {
 
-   }
+    }
 }
