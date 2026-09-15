@@ -1,5 +1,6 @@
 #ifndef ROBOT_H
 #define ROBOT_H
+void PWMUpdateSpeed();
 typedef struct robotStateBITS {
 union {
 struct {
