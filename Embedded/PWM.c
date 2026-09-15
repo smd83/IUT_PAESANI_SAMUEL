@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "IO.h"
 #include "PWM.h"
+#include "ToolBox.h"
 #define PWMPER 24.0
 void InitPWM(void) {
 PTCON2bits.PCLKDIV = 0b000; //Divide by 1
@@ -20,6 +21,14 @@ PTCONbits.PTEN = 1;
 double talon = 50;
 void PWMSetSpeed(float vitesseEnPourcents)
 {
-PDC1 = vitesseEnPourcents * PWMPER + talon;
-SDC1 = talon;
+    if(vitesseEnPourcents>=0){
+        SDC1 = Abs(vitesseEnPourcents) * PWMPER + talon;
+        PDC1 = talon;
+        PDC2 = vitesseEnPourcents * PWMPER + talon;
+        SDC2 = talon;
+    }
+/*else if(vitesseEnPourcents <=0){
+    PDC2 = vitesseEnPourcents * PWMPER + talon;
+    SDC2 = talon;
+}*/
 }
