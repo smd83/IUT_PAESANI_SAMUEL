@@ -58,9 +58,9 @@ void InitADC1(void) {
 /* This is ADC interrupt routine */
 void __attribute__((interrupt, no_auto_psv)) _AD1Interrupt(void) {
     IFS0bits.AD1IF = 0;
-    ADCResult[0] = ADC1BUF0; // Read the AN-scan input 1 conversion result
-    ADCResult[1] = ADC1BUF1; // Read the AN3 conversion result
-    ADCResult[2] = ADC1BUF2; // Read the AN5 conversion result
+    ADCResult[0] = ADC1BUF0; // Read the AN-scan input 1 conversion result droite
+    ADCResult[1] = ADC1BUF1; // Read the AN3 conversion result milieu
+    ADCResult[2] = ADC1BUF2; // Read the AN5 conversion result gauche0
     ADCConversionFinishedFlag = 1;
 }
 
