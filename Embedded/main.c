@@ -93,7 +93,7 @@ PWMSetSpeedConsigne(-15, MOTEUR_GAUCHE);
 stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
 break;
 case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
-    SetNextRobotStateInAutomaticMode();
+SetNextRobotStateInAutomaticMode();
 break;
 case STATE_TOURNE_SUR_PLACE_DROITE:
 PWMSetSpeedConsigne(-15, MOTEUR_DROIT);
