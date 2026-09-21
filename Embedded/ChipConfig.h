@@ -8,4 +8,4 @@
 #define FCY 60000000
 void InitOscillator();
 
-#endif	/* CHIPCONFIG_H */
+#endif

@@ -15,5 +15,5 @@ unsigned char ADCIsConversionFinished(void);
 void ADCClearConversionFinishedFlag(void);
 
 
-#endif	/* ADC_H */
+#endif  
 

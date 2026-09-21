@@ -1,3 +1,5 @@
+#ifndef main_H
+#define	main_H
 #define FCY 60000000
 #define STATE_ATTENTE 0
 #define STATE_ATTENTE_EN_COURS 1
@@ -20,4 +22,5 @@
 #define OBSTACLE_A_DROITE 2
 #define OBSTACLE_EN_FACE 3
 void OperatingSystemLoop(void);
-void SetNextRobotStateInAutomaticMode();
+void SetNextRobotStateInAutomaticMode(void);
+#endif

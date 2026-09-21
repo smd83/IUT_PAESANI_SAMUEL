@@ -8,4 +8,4 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void);
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void);
 void SetFreqTimer1(float freq);
 extern unsigned long timestamp;
-#endif /* TIMER_H */
+#endif

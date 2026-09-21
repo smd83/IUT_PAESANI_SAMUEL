@@ -4,7 +4,7 @@
 #include "ToolBox.h"
 #include "Robot.h"
 #define PWMPER 24.0
-float acceleration=2;
+float acceleration=5;
 void InitPWM(void) {
 PTCON2bits.PCLKDIV = 0b000; //Divide by 1
 PTPER = 100 * PWMPER; //éPriode en pourcentage
@@ -23,13 +23,13 @@ PTCONbits.PTEN = 1;
 double talon = 50;
 void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur){
     if(moteur == MOTEUR_DROIT){
-    robotState.vitesseDroiteConsigne=vitesseEnPourcents;
+    robotState.vitesseDroiteConsigne= vitesseEnPourcents;
     }
     if(moteur == MOTEUR_GAUCHE){
-     robotState.vitesseGaucheConsigne=vitesseEnPourcents;   
+     robotState.vitesseGaucheConsigne=  vitesseEnPourcents;   
     }
     
-    /* if(motor == MOTEUR_DROIT){
+     if(moteur == MOTEUR_DROIT){
         if(vitesseEnPourcents>=0){
         PDC1 = Abs(vitesseEnPourcents) * PWMPER + talon;
         SDC1 = talon;
@@ -39,7 +39,7 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur){
         PDC1 = talon;    
         }
     }
-    if(motor==MOTEUR_GAUCHE){
+    if(moteur==MOTEUR_GAUCHE){
         if(vitesseEnPourcents>=0){
         SDC2 = Abs(vitesseEnPourcents) * PWMPER + talon;
         PDC2 = talon;
@@ -48,7 +48,7 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, char moteur){
         PDC2 = Abs(vitesseEnPourcents) * PWMPER + talon;
         SDC2 = talon;    
         }
-    }*/
+    }
         
 
 }
