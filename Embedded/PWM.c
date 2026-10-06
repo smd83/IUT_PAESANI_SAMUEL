@@ -4,7 +4,7 @@
 #include "ToolBox.h"
 #include "Robot.h"
 #define PWMPER 24.0
-float acceleration=5;
+float acceleration=500;
 void InitPWM(void) {
 PTCON2bits.PCLKDIV = 0b000; //Divide by 1
 PTPER = 100 * PWMPER; //ÈPriode en pourcentage

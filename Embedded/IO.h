@@ -14,6 +14,11 @@
 #define LED_ORANGE_2 _LATK15
 #define LED_ROUGE_2 _LATA10
 #define LED_VERTE_2 _LATH3
+
+//Affectation des boutons
+#define SW1 _RH0
+#define SW2 _RH1
+#define SW3 _RH2
 // Prototypes fonctions
 void InitIO();
 void LockIO();
