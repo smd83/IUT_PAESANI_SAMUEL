@@ -70,12 +70,7 @@ int main(void) {
                 InitTimer4();
             }
                 
-                
-            
-    
-          
-            
-
+     
             OLDSW1=SW1;
             OLDSW2=SW2;
             OLDSW3=SW3;
