@@ -16,7 +16,6 @@ namespace IUT_Paesani_Samuel
     /// </summary>
     public partial class MainWindow : Window
     {
-        static int i=0;
 
         public MainWindow()
         {
@@ -47,8 +46,7 @@ namespace IUT_Paesani_Samuel
         }
         private void buttonClear_Click(object sender, RoutedEventArgs e)
         {
-            textBoxRéception.Text = " ";
-            textBoxEmission.Text = " ";
+            ClearMessage();
         
         }
         private void buttonTest_Click(object sender, RoutedEventArgs e)
@@ -63,23 +61,29 @@ namespace IUT_Paesani_Samuel
        
 
         private void SendMessage()
+        {                          
+                textBoxRéception.Text += "Reçu: " + textBoxEmission.Text + "\n" + "\r";
+            textBoxEmission.Text = "";
+            
+        }
+        private void ClearMessage()
         {
-            string message = textBoxEmission.GetLineText(i);
-            while (message != null)
-            {
-                if (message == null)
-                {
-                    return;
-                }
-                else
-                {
-                    textBoxRéception.Text = "Reçu: " + message + "\n" + "\r";
-                }
-                i++;
-            }
+            textBoxRéception.Text = " ";
+            textBoxEmission.Text = " ";
         }
 
-        
+        private void textBoxEmission_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                SendMessage();
+            }
+            if (e.Key == Key.Delete)
+            {
+                ClearMessage();
+            }
+
+        }
     }
 }
 

@@ -22,7 +22,7 @@
             <TextBox x:Name="textBoxRéception" TextWrapping="Wrap"   IsReadOnly="True" KeyUp="textBoxRéception_KeyUp"/>
         </GroupBox>
         <GroupBox x:Name="Emission" Header="Emission" Grid.Row="0" Grid.Column="0" Margin="10,10,10,10" Grid.ColumnSpan="1">
-            <TextBox x:Name="textBoxEmission" TextWrapping="Wrap"    IsTabStop="False" AcceptsReturn="True" TextChanged="textBoxEmission_TextChanged" />
+            <TextBox x:Name="textBoxEmission" TextWrapping="Wrap"    IsTabStop="False" AcceptsReturn="True" TextChanged="textBoxEmission_TextChanged" KeyUp="textBoxEmission_KeyUp" />
         </GroupBox>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" Grid.ColumnSpan="2">
             <Button x:Name="buttonEnvoyer" Content="Envoyer" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30"  Width="100" Click="buttonEnvoyer_Click" KeyUp="buttonEnvoyer_KeyUp" Margin="5"/>
