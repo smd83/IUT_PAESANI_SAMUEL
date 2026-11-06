@@ -16,6 +16,7 @@ namespace IUT_Paesani_Samuel
     /// </summary>
     public partial class MainWindow : Window
     {
+        static int i=0;
 
         public MainWindow()
         {
@@ -39,21 +40,46 @@ namespace IUT_Paesani_Samuel
 
                 buttonEnvoyer.Background = Brushes.RoyalBlue;
             }
+                SendMessage();
+               
+            
 
         }
+        private void buttonClear_Click(object sender, RoutedEventArgs e)
+        {
+            textBoxRéception.Text = " ";
+            textBoxEmission.Text = " ";
+        
+        }
+        private void buttonTest_Click(object sender, RoutedEventArgs e)
+        { }
+        private void buttonEnvoyer_KeyUp(object sender, RoutedEventArgs e) { }
+        private void buttonTest_KeyUp(object sender, RoutedEventArgs e) { }
+        private void buttonClear_KeyUp(object sender, RoutedEventArgs e) { }
+
 
         private void textBoxRéception_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                SendMessage();
-            }
-        }
+        { }  
+       
 
         private void SendMessage()
         {
-           string message = textBoxEmission.GetLineText()
+            string message = textBoxEmission.GetLineText(i);
+            while (message != null)
+            {
+                if (message == null)
+                {
+                    return;
+                }
+                else
+                {
+                    textBoxRéception.Text = "Reçu: " + message + "\n" + "\r";
+                }
+                i++;
+            }
         }
+
+        
     }
 }
 

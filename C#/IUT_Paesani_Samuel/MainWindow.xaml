@@ -6,29 +6,29 @@
         xmlns:local="clr-namespace:IUT_Paesani_Samuel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            
             <RowDefinition/>
             <RowDefinition Height="50"/>
-           
+
 
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            
-            <ColumnDefinition/>
-            <ColumnDefinition />
-            
-        </Grid.ColumnDefinitions>
-        <GroupBox x:Name="Réception" Header="Réception" Grid.Column="1" Grid.Row="0" Margin="10">
+
+        <GroupBox x:Name="Réception" Header="Réception" Grid.Column="2" Grid.Row="0" Margin="10,10,10,10">
             <TextBox x:Name="textBoxRéception" TextWrapping="Wrap"   IsReadOnly="True" KeyUp="textBoxRéception_KeyUp"/>
         </GroupBox>
-        <GroupBox x:Name="Emission" Header="Emission" Grid.Row="0" Grid.Column="0" Margin="10">            
+        <GroupBox x:Name="Emission" Header="Emission" Grid.Row="0" Grid.Column="0" Margin="10,10,10,10" Grid.ColumnSpan="1">
             <TextBox x:Name="textBoxEmission" TextWrapping="Wrap"    IsTabStop="False" AcceptsReturn="True" TextChanged="textBoxEmission_TextChanged" />
         </GroupBox>
-        <Button x:Name="buttonEnvoyer" Grid.Column="0" Content="Envoyer" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30"  Width="100" Click="buttonEnvoyer_Click" KeyUp="buttonEnvoyer_KeyUp"/>
-        <Button x:Name="buttonTest" Grid.Column="0" Content="Test" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30"  Width="100" Click="buttonEnvoyer_Click" KeyUp="buttonEnvoyer_KeyUp"/>
-        <Button x:Name="buttonClear" Grid.Column="0" Content="Clear" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30"  Width="100" Click="buttonEnvoyer_Click" KeyUp="buttonEnvoyer_KeyUp"/>
-
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" Grid.ColumnSpan="2">
+            <Button x:Name="buttonEnvoyer" Content="Envoyer" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30"  Width="100" Click="buttonEnvoyer_Click" KeyUp="buttonEnvoyer_KeyUp" Margin="5"/>
+            <Button x:Name="buttonTest" Grid.Column="1" Content="Test" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30"  Width="100" Click="buttonTest_Click" KeyUp="buttonTest_KeyUp" Margin="5"/>
+            <Button x:Name="buttonClear" Grid.Column="1" Content="Clear" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30"  Width="100" Click="buttonClear_Click" KeyUp="buttonClear_KeyUp" Margin="5"/>
+        </StackPanel>
+        
     </Grid>
 </Window>
