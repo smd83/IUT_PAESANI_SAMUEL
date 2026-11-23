@@ -24,6 +24,7 @@ namespace IUT_Paesani_Samuel
         ExtendedSerialPort serialPort1;
         string receivedText = "";
         Robot robot = new Robot();
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -41,13 +42,23 @@ namespace IUT_Paesani_Samuel
 
         private void TimerAffichage_Tick(object? sender, EventArgs e)
         {
-            textBoxRéception.Text += robot.receivedText;
-            robot.receivedText = "";
+            //textBoxRéception.Text += robot.receivedText;
+            // robot.receivedText = "";
+            if (robot.byteListReceived.Count > 0)
+            {
+                var c = robot.byteListReceived.Dequeue();
+                textBoxRéception.Text += c.ToString();
+            }
         }
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
-            robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
+             robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
+            for (int i = 0; i < e.Data.Length; i++)
+            {
+               robot.byteListReceived.Enqueue(e.Data[i]);
+            }
+
         }
 
         private void textBoxEmission_TextChanged(object sender, TextChangedEventArgs e)
@@ -84,7 +95,10 @@ namespace IUT_Paesani_Samuel
             for(int i = 0; i < 20; i++)
             {
                 byteList[i] = (byte)(2 * i);
+                //textBoxRéception.Text += byteList[i];
+            
             }
+            serialPort1.Write(byteList,0,20);
         }
         private void buttonEnvoyer_KeyUp(object sender, RoutedEventArgs e) { }
         private void buttonTest_KeyUp(object sender, RoutedEventArgs e) { }
