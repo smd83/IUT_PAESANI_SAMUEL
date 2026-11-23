@@ -25,5 +25,6 @@
 #define OBSTACLE_A_GAUCHE2 5
 void OperatingSystemLoop(void);
 void SetNextRobotStateInAutomaticMode(void);
+void InitUART(void);
 
 #endif

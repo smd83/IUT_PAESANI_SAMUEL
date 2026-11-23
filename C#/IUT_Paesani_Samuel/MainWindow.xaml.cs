@@ -44,10 +44,10 @@ namespace IUT_Paesani_Samuel
         {
             //textBoxRéception.Text += robot.receivedText;
             // robot.receivedText = "";
-            if (robot.byteListReceived.Count > 0)
+            while (robot.byteListReceived.Count > 0)
             {
                 var c = robot.byteListReceived.Dequeue();
-                textBoxRéception.Text += c.ToString();
+                textBoxRéception.Text += "0x" + c.ToString("X2")+" ";
             }
         }
 

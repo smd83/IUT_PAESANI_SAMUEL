@@ -15,6 +15,7 @@
 #include "ADC.h"
 #include "Robot.h"
 #include "main.h"
+#include "UART.h"
 unsigned long avant=0;
 unsigned char stateRobot;
 static uint8_t OLDSW1=0,OLDSW2=0,OLDSW3=0;
