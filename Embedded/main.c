@@ -43,7 +43,7 @@ int main(void) {
     
     InitTimer23();
     InitTimer1();
-    
+    InitUART();
     
     //***********************************************************************************************
     //apppel des fonctions PWM
@@ -64,7 +64,7 @@ int main(void) {
     //**********************************************************************************************
     while (1) {
         
-        while(timestamp <= 59999){
+        /*while(timestamp <= 59999){
         
             if((!SW1 && OLDSW1 ) || (!SW2 && OLDSW2) || (!SW3 && OLDSW3)){
                
@@ -97,7 +97,9 @@ int main(void) {
         }
                 break;
         
-  }
+  */
+       
+    }
 }
 
 
